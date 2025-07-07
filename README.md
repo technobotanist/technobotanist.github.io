@@ -3,61 +3,44 @@
 # Colin Patrick Keenan
 
 **Technologist · Librarian · Exhibit Developer**  
-📍 Raleigh, NC — [NC State University Libraries](https://www.lib.ncsu.edu/staff/cpkeena2) | [MTR Magic Key LLP](https://www.mtrmagickey.com) | [Partner Profile](https://www.mtrmagickey.com/partners/keenan)
-
+📍 Raleigh, NC — [NC State University Libraries](https://www.lib.ncsu.edu/staff/cpkeena2) | [MTR Magic Key LLP](https://www.mtrmagickey.com/partners/keenan)
+📧 cpkeena2@ncsu.edu | colin@mtrmagickey.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/colinkeenan/)
 ---
 
 ## 🧠 About Me
 
-I'm a systems builder across educational, public, and interactive contexts. At NC State, I lead development of creative technology workflows for experiential learning, immersive research, and scholarly communication. At [MTR Magic Key](https://www.mtrmagickey.com), I design and deploy embedded AI, real-time graphics, and physical interfaces for museums and civic spaces. My work emphasizes open formats, long-term maintainability, and community utility.
+I make interactive and user-centered products in educational contexts. Typically, these products involve software and hardware components. At the NC State University Libraries, I'm deeply involved in the development of creative technology workflows for experiential learning, immersive research, and staffing of makerspaces within [‘The Studios’](https://www.lib.ncsu.edu/the-studios). At [MTR Magic Key](https://www.mtrmagickey.com), I design and deploy interactive exhibits, embedded AI, real-time graphics, and physical interfaces for our clients (largely museums and civic spaces). My work emphasizes open formats, long-term maintainability, and community utility.
+
 
 ---
 
 ## 🔍 Selected Projects
 
-- **[Dueling Dinosaurs Interactive](https://www.mtrmagickey.com/our-work/dueling-dinosaurs)** – Live-streamed media kiosk for the NC Museum of Natural Sciences
-- **[Magic Key FM](https://www.mtrmagickey.com/our-work/magic-key-fm)** – Modular, browser-configurable radio for exhibits and installations
+- **[Dueling Dinosaurs Interactive](https://www.mtrmagickey.com/ddci)** – Live-streamed media kiosk for the NC Museum of Natural Sciences
+- **[Magic Key FM](https://www.magickeyfm.com)** – Modular, browser-configurable radio for exhibits and installations
 - **[Magic Key Assistant](https://www.mtrmagickey.com/magic-key-assistant-llm)** – Discord-native AI assistant backed by local vector search and LangChain
-- **[VRPlants](https://delta.ncsu.edu/news/2022/12/01/vrplants-brings-plant-anatomy-to-life/)** – Web-native 3D learning tools for plant biology education
+- **[VRPlants](https://vrplants.cals.ncsu.edu/)** – Web-native 3D learning tools for plant biology education and XR experiences on Meta Quest
 - **[The Naturalist’s Workshop](https://ieeexplore.ieee.org/document/9155162)** – VR natural history interface using 3D scanned specimens
-- **[Visualization Toolkit](https://www.youtube.com/watch?v=mt7eClWSvOg)** – Unity SDK for 360° domes and immersive learning environments
+- **[visSDK Visualization Toolkit](https://www.youtube.com/watch?v=mt7eClWSvOg)** – Unity SDK for 360° domes and immersive learning environments
 
 ---
 
 ## ⚙️ Tools of Choice
 
-- **Code & Stack**: Python, JavaScript, Unity, Three.js, Bash
-- **Graphics**: Blender, WebXR, photogrammetry, procedural art
-- **Devices**: Pi ecosystem, cameras, kiosks, embedded displays
-- **AI/Media**: Local inference, computer vision, FFmpeg pipelines
-- **Web**: JSON APIs, static sites, edge compute architectures
+- **Code & Stack**:  React, JavaScript, Three.js, Python
+- **Graphics**: Blender, WebXR (A-Frame), Photogrammetry, Unity
+- **Hardware**: Edge compute (Pi ecosystem), weird cameras, XR headsets, maintainable kiosks, embedded displays
+- **AI/Media**: Local inference, computer vision, FFmpeg, OpenAI API
 
 ---
 
 ## 📚 Selected Talks & Publications
 
 - *[AI and the Future of Personal Computing](https://www.youtube.com/watch?v=mt7eClWSvOg)* – NC LIVE (2024)
-- *[Plant Biology Education in Virtual Reality](https://vimeo.com/517701202)* – Harvard Discovery Series (2021)
+- *[Plant Biology Education in Virtual Reality](https://harvard.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b8ebdb91-c3e8-4e88-8c4a-acd9014d7379)* – Harvard Discovery Series (2021)
 - *[Exhibiting Digital Collections via WebXR](https://www.alastore.ala.org/content/32-virtual-augmented-and-mixed-reality-programs-libraries)* – ALA Editions (2021)
 - *[Designing for Collaborative Play in New Realities](https://ieeexplore.ieee.org/document/8811545)* – IEEE GEM (2019)
 - *[Empowering 360° Theater Use with Unity SDKs](https://www.cni.org/topics/digital-scholarship/empowering-360-theater-utilization-with-the-visualization-studio-development-kit-for-unity)* – CNI (2023)
 
----
 
-## 🧩 Teaching, Research, & Instructional Development
-
-- **[VRPlants](https://vrplants.github.io/)** (PI, 2018–present) — immersive plant science tools for PB200 & PB250, funded by DELTA and ASPB BLOOME
-- **Accessible Virtual Labs** — remote instruction suite for biology education (DELTA exploratory grant, 2021)
-- **Live-streamed Game-Based Learning** — instructional Twitch series with museum collaborators
-- **visSDK** — Unity-based framework for educators in 360° learning spaces ([CNI 2023](https://www.cni.org/topics/digital-scholarship/empowering-360-theater-utilization-with-the-visualization-studio-development-kit-for-unity))
-
----
-
-## 📬 Contact
-
-- 📧 cpkeena2@ncsu.edu | colin@mtrmagickey.com  
-- 🔗 [LinkedIn](https://www.linkedin.com/in/colinkeenan/) | [mtrmagickey.com](https://www.mtrmagickey.com)
-
----
-
-<!-- Repo updated regularly to test changes and push workflows -->
