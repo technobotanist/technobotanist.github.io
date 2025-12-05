@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" />
   <style>
     :root {
       --charcoal: #12100f;
@@ -18,6 +17,7 @@
       --sage: #7e918a;
       --ash: rgba(245, 236, 221, 0.75);
       --grid-gap: clamp(1rem, 3vw, 2.5rem);
+      --container-max: 1400px;
     }
 
     * {
@@ -47,11 +47,16 @@
     }
 
     main {
-      width: min(960px, 100%);
+      width: min(var(--container-max), 100%);
       margin: 0 auto 3rem;
-      display: flex;
-      flex-direction: column;
-      gap: clamp(1.75rem, 3vw, 3rem);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+      gap: var(--grid-gap);
+      align-items: start;
+    }
+
+    .full-span {
+      grid-column: 1 / -1;
     }
 
     section,
@@ -338,7 +343,7 @@
 </head>
 <body>
   <main>
-    <header class="hero">
+    <header class="hero full-span">
       <div>
         <p class="eyebrow">technobotanist.github.io</p>
         <h1>Colin Patrick Keenan</h1>
@@ -354,12 +359,12 @@
       </ul>
     </header>
 
-    <section id="profile" class="section">
+    <section id="profile" class="section full-span">
       <h2>Profile</h2>
       <p class="section-intro">Librarian and creative technologist building interactive systems that link XR, AI, and real-time graphics to public learning, exhibitions, and research. I ship multi-year museum installations and web-native tools that emphasize open formats, maintainability, and measurable benefits for visitors, students, and instructors. Stack fluency spans Unity, WebXR, local inference, embedded hardware, and cross-disciplinary workflows for libraries and museums.</p>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section full-span">
       <h2>Recent XR & Interactive Systems</h2>
       <div class="card-grid">
         <article class="card project-card">
@@ -473,7 +478,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="experience" class="section full-span">
       <h2>Professional Experience</h2>
       <div class="card-grid">
         <article class="card experience-card">
@@ -529,7 +534,7 @@
       </div>
     </section>
 
-    <section id="recognition" class="section">
+    <section id="recognition" class="section full-span">
       <h2>Recognition, Talks & Publications</h2>
       <ul class="recognition-list">
         <li>Winner- "Best use of nReal", MIT Reality Hack 2020 — Unity web social XR application "#<sup>3</sup>" (<a href="https://www.lib.ncsu.edu/news/staff-news/keenan-attends-and-wins-reality-hack">link</a>).</li>
