@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colin Patrick Keenan - CV</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.3;
+      color: #222;
+      background: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.75rem;
+      font-size: 10pt;
+    }
+
+    header {
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 18pt;
+      margin-bottom: 0.25rem;
+      color: #111;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 9pt;
+      color: #444;
+    }
+
+    .contact-info a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 13pt;
+      color: #111;
+      border-bottom: 1px solid #999;
+      padding-bottom: 0.15rem;
+      margin: 0.75rem 0 0.4rem;
+    }
+
+    h3 {
+      font-size: 11pt;
+      color: #222;
+      margin: 0.5rem 0 0.15rem;
+    }
+
+    h4 {
+      font-size: 10pt;
+      color: #444;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .job-header, .project-header {
+      margin-bottom: 0.15rem;
+    }
+
+    .job-with-image {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0.5rem;
+      align-items: start;
+      margin-bottom: 0.4rem;
+    }
+
+    .job-image {
+      width: 180px;
+      height: 90px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .job-content {
+      min-width: 0;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 9pt;
+      margin-bottom: 0.15rem;
+    }
+
+    .project-description {
+      color: #555;
+      font-style: italic;
+      margin-bottom: 0.25rem;
+      font-size: 9pt;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    li {
+      margin-bottom: 0.1rem;
+      font-size: 9pt;
+    }
+
+    .project {
+      margin-bottom: 0.6rem;
+      page-break-inside: avoid;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+
+    .project-content h3 {
+      margin-top: 0;
+    }
+
+    .project-image {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .links {
+      margin-top: 0.15rem;
+      font-size: 8pt;
+    }
+
+    .links a {
+      color: #0066cc;
+      text-decoration: none;
+      margin-right: 0.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-category {
+      margin-bottom: 0.15rem;
+      font-size: 9pt;
+    }
+
+    .skill-category strong {
+      display: inline;
+      color: #222;
+    }
+
+    .education-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .education-item strong {
+      display: inline;
+      font-size: 10pt;
+      color: #222;
+    }
+
+    .education-item div {
+      font-size: 9pt;
+    }
+
+    @media print {
+      body {
+        padding: 0.3rem;
+        font-size: 9pt;
+      }
+
+      h1 {
+        font-size: 16pt;
+      }
+
+      h2 {
+        font-size: 12pt;
+        margin-top: 0.5rem;
+      }
+
+      h3 {
+        font-size: 10pt;
+      }
+
+      .project {
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+      }
+
+      .contact-info {
+        font-size: 8pt;
+      }
+
+      li {
+        font-size: 8pt;
+      }
+
+      .meta {
+        font-size: 8pt;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Colin Patrick Keenan</h1>
+    <div class="subtitle">Technologist · Librarian · Exhibit Developer</div>
+    <div class="contact-info">
+      <span>📍 Raleigh, NC</span>
+      <span>📧 <a href="mailto:cpkeena2@ncsu.edu">cpkeena2@ncsu.edu</a></span>
+      <span>📧 <a href="mailto:colin@mtrmagickey.com">colin@mtrmagickey.com</a></span>
+      <span>🔗 <a href="https://technobotanist.github.io">technobotanist.github.io</a></span>
+      <span>🔗 <a href="https://github.com/technobotanist">GitHub</a></span>
+      <span>🔗 <a href="https://www.linkedin.com/in/colinkeenan/">LinkedIn</a></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Professional Experience</h2>
+
+    <div class="job-with-image">
+      <img src="assets/experience/Experience1.png" alt="MTR Magic Key" class="job-image">
+      <div class="job-content">
+        <div class="job-header">
+          <h3>Chief Technologist & Partner — MTR Magic Key LLP</h3>
+          <div class="meta">Oct 2021 – Present</div>
+        </div>
+        <ul>
+          <li>Co-founded interactive studio delivering custom exhibits, interactive kiosks, and web-native tools</li>
+          <li>Building durable and dynamic installations with operator autonomy</li>
+          <li>Developing containerized local intelligence products</li>
+          <li>Software, hardware, instruction, and exhibition</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.mtrmagickey.com/partners/keenan">Partner Profile</a>
+          <a href="https://www.mtrmagickey.com">mtrmagickey.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-with-image">
+      <img src="assets/experience/Experience2.png" alt="NC State Libraries" class="job-image">
+      <div class="job-content">
+        <div class="job-header">
+          <h3>Experiential Learning Services Librarian — NC State University Libraries</h3>
+          <div class="meta">Aug 2023 – Present | Learning Spaces & Services</div>
+        </div>
+        <ul>
+          <li>Provide hands-on development, design, and mentorship in >100 hours of 1-on-1 technology consultations yearly</li>
+          <li>Lead creative development of XR, AI, and real-time media toolkits for faculty courses and research</li>
+          <li>Build workflows, documentation, and staff training enabling Studios teams to sustain and grow services</li>
+          <li>Studios spaces host 30,000+ student sessions annually across five staffed experiential learning spaces</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.lib.ncsu.edu/staff/cpkeena2">Staff Profile</a>
+          <a href="https://www.lib.ncsu.edu/the-studios">The Studios</a>
+        </div>
+
+
+    </div>
+    </div>
+
+    <div class="job-with-image">
+      <img src="assets/experience/Experience3.png" alt="Research Career" class="job-image">
+      <div class="job-content">
+        <div class="job-header">
+          <h3>University Library Specialist — NC State University Libraries</h3>
+          <div class="meta">Aug 2020 – Aug 2023 | Learning Spaces & Services</div>
+        </div>
+
+        <div class="job-header">
+          <h3>University Library Technician — NC State University Libraries</h3>
+          <div class="meta">Sep 2018 – Aug 2020 | Learning Spaces & Services</div>
+        </div>
+        <ul>
+          <li>Led XR, 3D scanning, and game engine consultations, delivering 300+ 1-on-1 consultations over program's first five years</li>
+          <li>Sustained high VR facility utilization during hybrid and remote instruction phases</li>
+          <li>Custodian of program transition from pilot to incorporation into long-term support within Libraries' portfolio</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+
+    <div class="project">
+      <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/04d2602c-d98b-4d3d-94b8-190e3903bd4c/PXL_20240421_160606857.jpg" alt="Dueling Dinosaurs Camera Interactive" class="project-image">
+      <div class="project-content">
+        <h3>Dueling Dinosaurs Camera Interactive</h3>
+        <h4>NC Museum of Natural Sciences · MTR Magic Key</h4>
+        <p class="project-description">4K live video system + browser kiosk exposing fossil prep work</p>
+        <ul>
+          <li>Broadcast lab activity in real time via Sony SRG XB25 + Matrox Maevex + Dell R750 media stack</li>
+          <li>Shipped Windows kiosk UI backed by Drupal JsonAPI content and OpenCV/Python timelapse automation</li>
+          <li>Designed publishing workflow so museum staff keep lab highlights current without vendor intervention</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.mtrmagickey.com/ddci">Project Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://www.midtownmag.com/wp-content/uploads/2024/06/8O2A5296-Enhanced-NR-Edit-1536x1024.jpg" alt="Dueling Dinosaurs Fossil Prep Interactive" class="project-image">
+      <div class="project-content">
+        <h3>Dueling Dinosaurs Fossil Prep Interactive</h3>
+        <h4>NC Museum of Natural Sciences · MTR Magic Key</h4>
+        <p class="project-description">Unity excavation game mirroring SECU DinoLab tooling on large-format touchscreens</p>
+        <ul>
+          <li>Productionized prototype into durable kiosk build with tuned tool physics and tactile audio feedback</li>
+          <li>Implemented tool selection, timed challenges, and instructional overlays communicating risk and care</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.mtrmagickey.com/ddfp">Project Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://vrplants.cals.ncsu.edu/wp-content/uploads/2022/04/Dayflower_PistilInspection_ControlsExposed_VRPlants-1536x764.png" alt="Plant Anatomy WebXR Dissections" class="project-image">
+      <div class="project-content">
+        <h3>Plant Anatomy WebXR Dissections</h3>
+        <h4>NCSU Plant & Microbial Biology</h4>
+        <p class="project-description">Web-native 3D plant anatomy modules for Plant Biology 250, accessible via any browser or device</p>
+        <ul>
+          <li>Developed four interactive dissection modules (Hibiscus, Lily, Dayflower, Defensive Structures) for lab instruction</li>
+          <li>Released under CC BY 4.0 for free remix and redistribution by instructors and students worldwide</li>
+          <li>Shipped via DELTA Exploratory grant, establishing browser-first plant anatomy pedagogy</li>
+        </ul>
+        <div class="links">
+          <a href="https://vrplants.cals.ncsu.edu/">VRPlants</a>
+          <a href="https://vrplants.cals.ncsu.edu/plant-anatomy-webxr-dissections/">WebXR Modules</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://www.lib.ncsu.edu/sites/default/files/Image_20250910_173655_131.png" alt="NC State Collegiate Game Jam" class="project-image">
+      <div class="project-content">
+        <h3>Inaugural NC State Collegiate Game Jam</h3>
+        <h4>NC State University Libraries</h4>
+        <p class="project-description">Four-day "Tunnels" themed game jam uniting students across six colleges</p>
+        <ul>
+          <li>Co-led jam that mobilized 55 students across six colleges (Sept 25–28, 2025)</li>
+          <li>Deployed custom lab images and coordinated space, hardware, and mentorship resources</li>
+          <li>Awarded $2,250 in prizes to playable prototypes, establishing annual tradition</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.lib.ncsu.edu/projects/inaugural-collegiate-game-jam">Project Page</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="project">
+      <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/6a9a720d-5e62-457b-a27a-e7215c6e2bf7/Screenshot+2025-12-05+at+02-54-45+Mocking+Board.png" alt="Mocking Board" class="project-image">
+      <div class="project-content">
+        <h3>Mocking Board — Handy Internet Signage</h3>
+        <h4>MTR Magic Key LLP</h4>
+        <p class="project-description">Pure HTML/CSS/JS signage kit to quickly make a sign or mock-up in the browser</p>
+        <ul>
+          <li>Live editor supports gradients, fonts, imagery, animations, and per-element color states</li>
+          <li>Rapidly mock-up, save, and transfer signage</li>
+          <li>Optimized for instant load on low-power hardware</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.mtrmagickey.com/mocking-board">Project Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/744/939/datas/original.jpg" alt="WEDGE" class="project-image">
+      <div class="project-content">
+        <h3>WEDGE — Wireless Ergonomic Dynamic Gesture Enhancer</h3>
+        <h4>MIT Reality Hack 2024</h4>
+        <p class="project-description">ESP32 peripheral that keeps bidirectional Bluetooth state with Meta Quest 2 via the Singularity Unity library</p>
+        <ul>
+          <li>Co-designed modular triangular chassis so teams can swap buttons, LEDs, and sensors for accessibility in minutes</li>
+          <li>Produced Unity toy scenes, music loops, and how-to media that foreground asymmetric play and education use cases</li>
+        </ul>
+        <div class="links">
+          <a href="https://devpost.com/software/wedge-wireless-ergonomic-dynamic-gesture-enhancer">Devpost</a>
+          <a href="https://www.youtube.com/watch?v=7wquz0SqFo4">Demo Video</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://www.lib.ncsu.edu/sites/default/files/2023-02/screenshot_2023-02-07_at_19-49-05_environment_scan_presentation.png" alt="Visualization Studio Development Kit" class="project-image">
+      <div class="project-content">
+        <h3>Visualization Studio Development Kit for Unity</h3>
+        <h4>NC State University Libraries</h4>
+        <p class="project-description">Unity toolkit enabling rapid development for the Libraries' 360° Cyma Rubin Visualization Gallery</p>
+        <ul>
+          <li>Built pre-fab cameras and in-editor emulator supporting 15360×1080 hyper-wide projection without physical deployment</li>
+          <li>Established reverse-compatibility pipeline for existing Unity URP projects, democratizing access to immersive space</li>
+          <li>Co-mentored 2022–23 Susan Ellen Everett Interns through design, development, and release</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.lib.ncsu.edu/projects/visualization-spaces-development-kit-unity-game-engine">Project Page</a>
+          <a href="https://go.ncsu.edu/vissdk">VisSDK Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/4ce763ee-385b-45ef-8462-2e957aff4d8d/Screenshot+2025-12-05+at+03-01-53+Daily-Derby+%E2%80%A2+The+Daily+Horseracing+Game.png" alt="Daily Derby" class="project-image">
+      <div class="project-content">
+        <h3>Daily Derby — The Daily Horseracing Game</h3>
+        <h4>MTR Magic Key LLP</h4>
+        <p class="project-description">Daily dose of thrill: select and race unique foals every day in this browser-based racing game</p>
+        <ul>
+          <li>Procedural horse generation system creating unique daily foals with distinct traits and abilities</li>
+          <li>Designed web-first racing mechanics optimized for quick daily engagement and progression</li>
+          <li>Launched as a live service game with persistent user accounts and daily challenges</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.daily-derby.com/">Play Daily Derby</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://cdn.sidequestvr.com/file/38077/screenshot_1png.png?size=1024" alt="The Naturalist's Workshop" class="project-image">
+      <div class="project-content">
+        <h3>The Naturalist's Workshop</h3>
+        <h4>NCSU Plant & Microbial Biology</h4>
+        <p class="project-description">Open VR curriculum + WebXR archives featuring 3D scanned herbarium specimens</p>
+        <ul>
+          <li>Co-led funding, staffing, and release of <em>The Naturalist's Workshop</em> for META Quest</li>
+          <li>Shipped The Naturalist's Workshop to SideQuest, reaching ~1,700 downloads and top 50 education ranking</li>
+          <li>Presented outcomes at Harvard Library Discovery Series, catalyzing immersive pedagogy adoption</li>
+        </ul>
+        <div class="links">
+          <a href="https://vrplants.cals.ncsu.edu/">VRPlants</a>
+          <a href="https://vrplants.cals.ncsu.edu/naturalists-workshop/">Naturalist's Workshop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recent Talks & Publications</h2>
+    <ul>
+      <li>"AI and the Future of Personal Computing" — NC LIVE 2024 (<a href="https://www.youtube.com/watch?v=mt7eClWSvOg">video</a>)</li>
+      <li>"Plant Biology Education in Virtual Reality" — Harvard Library Discovery Series (<a href="https://harvard.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b8ebdb91-c3e8-4e88-8c4a-acd9014d7379">recording</a>)</li>
+      <li>"Exhibiting Digital Collections via WebXR" — ALA Editions 2021 (<a href="https://www.alastore.ala.org/content/32-virtual-augmented-and-mixed-reality-programs-libraries">chapter</a>)</li>
+      <li>"Designing for Collaborative Play in New Realities" — IEEE GEM 2019 (<a href="https://ieeexplore.ieee.org/document/8811545">paper</a>)</li>
+      <li>"Empowering 360° Theater Utilization with the Visualization Studio Development Kit for Unity" — CNI 2023 (<a href="https://www.cni.org/topics/digital-scholarship/empowering-360-theater-utilization-with-the-visualization-studio-development-kit-for-unity">abstract</a>)</li>
+      <li>Winner - "Best use of nReal", MIT Reality Hack 2020 — "#³" (<a href="https://www.lib.ncsu.edu/news/staff-news/keenan-attends-and-wins-reality-hack">link</a>)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Technical Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <strong>XR & Graphics</strong>
+        Unity, WebXR (A-Frame, three.js), Blender, Android/Meta .apk dev
+      </div>
+      <div class="skill-category">
+        <strong>Web & Backend</strong>
+        JavaScript, React, HTML/CSS, Web Apps, Drupal JsonAPI, Python + OpenCV media pipelines
+      </div>
+      <div class="skill-category">
+        <strong>Hardware</strong>
+        Server Environments, Microcomputing, Video Encoding & Live Media Service, 3D/2D Fabrication, IoT
+      </div>
+      <div class="skill-category">
+        <strong>AI & Generative</strong>
+        OpenAI API, Stable Diffusion, Midjourney, RunwayML, Local Multimodal Inference Pipelines
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="education-item">
+      <strong>Master of Science</strong>
+      <strong>Plant Biology</strong>
+      <div>North Carolina State University, 2018</div>
+          <div class="education-item">
+        <strong>Master's Research Project</strong>
+        <div>"'Second Harvest: 3D Digitization, Analysis, and Display of the NCSC Seed Herbarium'"</div>
+        </div>
+    </div>
+    <div class="education-item">
+      <strong>Bachelor of Science</strong>
+      <strong>Biology</strong>
+      <div>Mathematics & Environmental Science minors</div>
+      <div>SUNY Geneseo, 2012</div>
+    <div class="education-item">
+        <strong>Undergraduate Research</strong>
+        <div>"The Effect of Nutrient Deprivation on Myrosinase gene expression in <em>Brassica rapa</em>"</div>
+        </div>
+    </div>
+  </section>
+</body>
+</html>
