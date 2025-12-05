@@ -13,7 +13,7 @@
 
 ### Profile
 
-Librarian and creative technologist building interactive systems that link XR, AI, and real-time graphics to public learning, exhibitions, and research. I ship multi-year museum installations and web-native tools that emphasize open formats, maintainability, and measurable benefits for visitors, students, and instructors. Stack fluency spans Unity, WebXR, local inference, embedded hardware, and cross-disciplinary workflows for libraries and museums.
+Librarian and creative technologist building interactive systems that link XR, AI, and real-time graphics to public learning, exhibitions, and research. Developing learning tools and museum installations with open formats and measurable benefits for participants.
 
 ---
 

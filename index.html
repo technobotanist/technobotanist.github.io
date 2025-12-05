@@ -47,11 +47,11 @@
     }
 
     main {
-      width: min(1200px, calc(100% - clamp(2rem, 8vw, 6rem)));
-      margin: 0 auto 4rem;
+      width: min(960px, 100%);
+      margin: 0 auto 3rem;
       display: flex;
       flex-direction: column;
-      gap: clamp(2rem, 4vw, 3.5rem);
+      gap: clamp(1.75rem, 3vw, 3rem);
     }
 
     section,
@@ -298,6 +298,40 @@
       .contact-list {
         flex-direction: column;
         gap: 0.4rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        color: #111;
+        padding: 0;
+      }
+
+      body::before,
+      .hero::before {
+        display: none;
+      }
+
+      main {
+        width: 100%;
+        margin: 0;
+      }
+
+      section,
+      header.hero,
+      .card,
+      .project-card figure,
+      .experience-card figure {
+        background: #fff;
+        color: #111;
+        border: 1px solid #999;
+        box-shadow: none;
+      }
+
+      a {
+        color: #111;
+        text-decoration: underline;
       }
     }
   </style>
