@@ -126,9 +126,10 @@
 
     .page-2 section,
     .page-2 header.hero {
-      background: linear-gradient(135deg, rgba(245, 236, 221, 0.95), rgba(255, 255, 255, 0.9));
-      border: 1px solid rgba(42, 37, 32, 0.2);
-      color: var(--charcoal);
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.98), rgba(233, 220, 199, 0.94));
+      border: 1px solid rgba(42, 37, 32, 0.25);
+      color: rgba(18, 14, 11, 0.95);
+      box-shadow: 0 25px 60px rgba(18, 14, 11, 0.12);
     }
 
     .page-2 .hero::before {
@@ -151,7 +152,7 @@
     .page-2 .recognition-list,
     .page-2 .skills-columns,
     .page-2 .education-list {
-      color: rgba(18, 16, 15, 0.85);
+      color: rgba(18, 16, 15, 0.92);
     }
 
     .page-2 a {
@@ -167,8 +168,8 @@
     }
 
     .page-2 .card {
-      background: rgba(255, 255, 255, 0.5);
-      border-color: rgba(42, 37, 32, 0.15);
+      background: rgba(255, 255, 255, 0.82);
+      border-color: rgba(42, 37, 32, 0.25);
     }
 
     .page main {
@@ -324,7 +325,7 @@
 
     .project-card figure {
       margin: -1rem -1rem 0.75rem;
-      height: 11.25rem;
+      height: clamp(19.5rem, 33vw, 27rem);
       overflow: hidden;
       border-radius: 16px 16px 0 0;
       border-bottom: 1px solid rgba(196, 162, 104, 0.25);
@@ -410,19 +411,27 @@
       margin: -0.75rem -0.75rem 0.5rem;
       border-radius: 16px 16px 0 0;
       overflow: hidden;
-      height: clamp(11rem, 18vw, 15rem);
+      aspect-ratio: 2 / 1;
       background: rgba(18, 16, 15, 0.5);
-      display: grid;
-      grid-template-columns: minmax(4.5rem, 0.28fr) 1fr;
-      align-items: stretch;
     }
 
-    .experience-card .company-photo {
+    .experience-card .experience-photo {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      background: rgba(0, 0, 0, 0.35);
+      object-fit: cover;
       filter: saturate(0.92);
+    }
+
+    .page-1 #projects .card-grid {
+      min-height: clamp(51rem, 93vh, 78rem);
+    }
+
+    .page-2 #experience {
+      padding-bottom: clamp(1.25rem, 3vw, 2.5rem);
+    }
+
+    .page-2 #experience .card-grid {
+      min-height: clamp(22rem, 50vh, 32rem);
     }
 
     .recognition-list,
@@ -474,6 +483,10 @@
         gap: clamp(0.5rem, 1vw, 1rem);
       }
 
+      .page-2 main {
+        gap: clamp(0.4rem, 0.8vw, 0.75rem);
+      }
+
       .page main > * {
         min-width: 0;
         grid-column: span 6;
@@ -497,7 +510,8 @@
 
       .page-1 #projects {
         grid-column: 1 / -1;
-        min-height: 0;
+        display: flex;
+        flex-direction: column;
       }
 
       #projects .card-grid {
@@ -505,6 +519,8 @@
         grid-auto-rows: minmax(0, 1fr);
         gap: clamp(0.6rem, 1vw, 1.25rem);
         overflow: hidden;
+        flex: 1;
+        min-height: clamp(48rem, 85vh, 72rem);
       }
 
       #projects .card {
@@ -521,6 +537,18 @@
 
       #experience .card {
         min-height: 0;
+      }
+
+      .page-2 #experience {
+        grid-column: 1 / -1;
+        grid-row: span 2;
+        min-height: clamp(30rem, 62vh, 38rem);
+        padding-bottom: clamp(2rem, 4vw, 3rem);
+        margin-bottom: calc(-1 * clamp(0.4rem, 0.8vw, 0.75rem));
+      }
+
+      .page-2 #experience .card-grid {
+        min-height: 100%;
       }
 
       .page-2 #recognition,
@@ -819,8 +847,7 @@
       <div class="card-grid">
         <article class="card experience-card">
           <figure>
-            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/d3949710-7f3a-4b18-b811-57615ef1edc3/MTRMK_logo_key%281%29.png" alt="MTR Magic Key logo" class="company-logo">
-            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/2e0ab20d-65d4-4400-be81-b6503feb5577/DSC09148.jpg" alt="Portrait of Colin Patrick Keenan" loading="lazy" class="company-photo">
+            <img src="assets/experience/experience 1.jpg" alt="MTR Magic Key - Colin Patrick Keenan" loading="lazy" class="experience-photo">
           </figure>
           <div class="card-body">
             <p class="eyebrow">Oct 2021 – Present</p>
@@ -838,8 +865,7 @@
 
         <article class="card experience-card">
           <figure>
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lib.ncsu.edu%2Fthemes%2Fcustom%2Fncsulibraries%2Fimages%2Fscreenshot.jpg&f=1&nofb=1&ipt=bf4d000b7d61744672dc1f38c2cdd1b873144e0b3a6b8a1d932919832f333af4" alt="NC State Libraries logo" class="company-logo">
-            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/bc99e6a1-0dd8-41ee-9dc9-1a63bc0fa35b/Maharaj_Game_Jam_Judging_and_Awards_2_9-28-2025-9.JPG" alt="Colin Keenan at NC State Game Jam awards ceremony" loading="lazy" class="company-photo">
+            <img src="assets/experience/experience 2.jpg" alt="NC State Libraries - Colin Keenan at Game Jam" loading="lazy" class="experience-photo">
           </figure>
           <div class="card-body">
             <p class="eyebrow">Aug 2023 – Present</p>
@@ -855,9 +881,8 @@
         </article>
 
         <article class="card experience-card">
-                    <figure>
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lib.ncsu.edu%2Fthemes%2Fcustom%2Fncsulibraries%2Fimages%2Fscreenshot.jpg&f=1&nofb=1&ipt=bf4d000b7d61744672dc1f38c2cdd1b873144e0b3a6b8a1d932919832f333af4" alt="NC State Libraries logo" class="company-logo">
-            <img src="https://www.lib.ncsu.edu/sites/default/files/styles/large_4_3/public/2024-06/vr_studio_11-29-2023-02-min.jpg?itok=4t6NN2Ar" alt="NC State University Libraries experiential learning space" loading="lazy" class="company-photo">
+          <figure>
+            <img src="assets/experience/experience 3.jpg" alt="NC State Libraries - VR Studio" loading="lazy" class="experience-photo">
           </figure>
           <div class="card-body">
             <p class="eyebrow">Aug 2020 – Aug 2023</p>
