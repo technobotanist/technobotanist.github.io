@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
+      font-size: 150%;
       --charcoal: #12100f;
       --bark: #1d1a16;
       --saddle: #2a2520;
@@ -18,10 +19,160 @@
       --ash: rgba(245, 236, 221, 0.75);
       --grid-gap: clamp(1rem, 3vw, 2.5rem);
       --container-max: 1400px;
+      --tab-height: 4.375rem;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .tabs {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      background: rgba(18, 16, 15, 0.98);
+      backdrop-filter: blur(15px);
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .tab-btn {
+      flex: 1;
+      height: var(--tab-height);
+      border: none;
+      background: transparent;
+      color: rgba(245, 236, 221, 0.6);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-right: 1px solid rgba(196, 162, 104, 0.2);
+    }
+
+    .tab-btn:last-child {
+      border-right: none;
+    }
+
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0.1875rem;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .tab-btn:hover {
+      background: rgba(196, 162, 104, 0.1);
+      color: var(--paper);
+    }
+
+    .tab-btn.active {
+      color: var(--gold);
+      background: rgba(196, 162, 104, 0.15);
+    }
+
+    .tab-btn.active::after {
+      transform: scaleX(1);
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 2rem clamp(1rem, 4vw, 3rem) 2rem 2rem;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* Page 2 (Professional) inverted colors */
+    .page-2 {
+      background: radial-gradient(circle at 20% 20%, rgba(196, 162, 104, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 0, rgba(245, 236, 221, 0.1), transparent 35%),
+        var(--paper);
+      color: var(--charcoal);
+    }
+
+    .page-2::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(18, 16, 15, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(18, 16, 15, 0.03) 1px, transparent 1px);
+      background-size: 120px 120px;
+      pointer-events: none;
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    .page-2 section,
+    .page-2 header.hero {
+      background: linear-gradient(135deg, rgba(245, 236, 221, 0.95), rgba(255, 255, 255, 0.9));
+      border: 1px solid rgba(42, 37, 32, 0.2);
+      color: var(--charcoal);
+    }
+
+    .page-2 .hero::before {
+      background: linear-gradient(120deg, rgba(245, 236, 221, 0.9), rgba(255, 255, 255, 0.85)),
+        url('https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/05456f94-6660-45e4-abf1-c515b8006c00/output-onlinepngtools%281%29.png') center/cover;
+    }
+
+    .page-2 h1,
+    .page-2 h2,
+    .page-2 h3 {
+      color: var(--charcoal);
+    }
+
+    .page-2 .eyebrow {
+      color: var(--saddle);
+    }
+
+    .page-2 .meta,
+    .page-2 .impact-list,
+    .page-2 .recognition-list,
+    .page-2 .skills-columns,
+    .page-2 .education-list {
+      color: rgba(18, 16, 15, 0.85);
+    }
+
+    .page-2 a {
+      color: var(--saddle);
+    }
+
+    .page-2 .link-badges a {
+      border-color: rgba(42, 37, 32, 0.45);
+    }
+
+    .page-2 .link-badges a:hover {
+      background: rgba(42, 37, 32, 0.15);
+    }
+
+    .page-2 .card {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: rgba(42, 37, 32, 0.15);
+    }
+
+    .page main {
+      padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem 2rem;
     }
 
     body {
@@ -31,8 +182,8 @@
       background: radial-gradient(circle at 20% 20%, rgba(255, 210, 150, 0.1), transparent 40%),
         radial-gradient(circle at 80% 0, rgba(88, 111, 118, 0.12), transparent 35%),
         var(--charcoal);
-      min-height: 100vh;
-      padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 6vw, 4rem);
+      height: 100vh;
+      padding: 0;
     }
 
     body::before {
@@ -47,11 +198,11 @@
     }
 
     main {
-      width: min(var(--container-max), 100%);
-      margin: 0 auto 3rem;
+      width: 100%;
+      margin: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
-      gap: var(--grid-gap);
+      grid-template-columns: repeat(auto-fit, minmax(21.25rem, 1fr));
+      gap: clamp(0.75rem, 2vw, 2rem);
       align-items: start;
     }
 
@@ -63,17 +214,17 @@
     header.hero {
       background: linear-gradient(135deg, rgba(42, 37, 32, 0.95), rgba(22, 19, 16, 0.95));
       border: 1px solid rgba(196, 162, 104, 0.2);
-      border-radius: 28px;
-      padding: clamp(1.5rem, 4vw, 3rem);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      padding: clamp(0.75rem, 2.5vw, 1.5rem);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 340px;
+      min-height: 10rem;
       display: grid;
-      gap: 1rem;
+      gap: 0.5rem;
     }
 
     .hero::before {
@@ -81,7 +232,7 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(120deg, rgba(18, 16, 15, 0.85), rgba(18, 16, 15, 0.6)),
-        url('https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/04d2602c-d98b-4d3d-94b8-190e3903bd4c/PXL_20240421_160606857.jpg?format=1500w') center/cover;
+        url('https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/ad3c022c-e088-42d8-8715-22340f773c2d/DSC05645.jpg?content-type=image%2Fjpeg') center/cover;
       z-index: 0;
       filter: contrast(1.05) saturate(0.9);
     }
@@ -102,7 +253,7 @@
     .hero h1 {
       margin: 0;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 4.8rem);
+      font-size: clamp(2rem, 5vw, 3.5rem);
       letter-spacing: 0.06em;
       color: var(--paper);
     }
@@ -139,50 +290,51 @@
 
     .section h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.35em;
+      font-size: 1.15rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      margin: 0 0 1rem;
+      margin: 0 0 0.75rem;
       color: var(--paper);
     }
 
     .section-intro {
-      max-width: 720px;
+      max-width: 45rem;
       font-size: 1.05rem;
       line-height: 1.8;
       color: var(--ash);
     }
 
     .card-grid {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--grid-gap);
+      grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+      gap: clamp(0.75rem, 2vw, 1.5rem);
     }
 
     .card {
       background: rgba(18, 16, 15, 0.7);
       border: 1px solid rgba(196, 162, 104, 0.15);
-      border-radius: 22px;
-      padding: 1.5rem;
+      border-radius: 16px;
+      padding: 0.75rem;
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.5rem;
     }
 
     .project-card figure {
-      margin: -1.5rem -1.5rem 1rem;
-      height: 220px;
+      margin: -1rem -1rem 0.75rem;
+      height: 11.25rem;
       overflow: hidden;
-      border-radius: 22px 22px 0 0;
+      border-radius: 16px 16px 0 0;
       border-bottom: 1px solid rgba(196, 162, 104, 0.25);
+      background: rgba(18, 16, 15, 0.5);
     }
 
     .project-card img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       filter: saturate(0.95) contrast(1.05);
     }
 
@@ -197,9 +349,23 @@
 
     h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
+      font-size: 1.35rem;
       margin: 0;
       color: var(--paper);
+    }
+
+    .company-header {
+      margin-bottom: 0.5rem;
+    }
+
+    .company-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 0.45rem;
+      display: block;
+      border-right: 1px solid rgba(196, 162, 104, 0.25);
     }
 
     .meta {
@@ -241,16 +407,21 @@
     }
 
     .experience-card figure {
-      margin: -1.5rem -1.5rem 1rem;
-      border-radius: 22px 22px 0 0;
+      margin: -0.75rem -0.75rem 0.5rem;
+      border-radius: 16px 16px 0 0;
       overflow: hidden;
-      height: 220px;
+      height: clamp(11rem, 18vw, 15rem);
+      background: rgba(18, 16, 15, 0.5);
+      display: grid;
+      grid-template-columns: minmax(4.5rem, 0.28fr) 1fr;
+      align-items: stretch;
     }
 
-    .experience-card img {
+    .experience-card .company-photo {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: rgba(0, 0, 0, 0.35);
       filter: saturate(0.92);
     }
 
@@ -286,6 +457,86 @@
       color: rgba(245, 236, 221, 0.6);
     }
 
+    @media (min-width: 1200px) and (min-aspect-ratio: 16 / 9) {
+      :root {
+        font-size: 95%;
+      }
+
+      .page {
+        overflow: hidden;
+      }
+
+      .page main {
+        height: calc(100vh - var(--tab-height));
+        overflow: hidden;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-auto-rows: minmax(0, auto);
+        gap: clamp(0.5rem, 1vw, 1rem);
+      }
+
+      .page main > * {
+        min-width: 0;
+        grid-column: span 6;
+      }
+
+      .page main > .full-span {
+        grid-column: 1 / -1;
+      }
+
+      .page-1 header.hero {
+        grid-column: 1 / span 6;
+        min-height: 0;
+      }
+
+      .page-1 #profile {
+        grid-column: 7 / -1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .page-1 #projects {
+        grid-column: 1 / -1;
+        min-height: 0;
+      }
+
+      #projects .card-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: minmax(0, 1fr);
+        gap: clamp(0.6rem, 1vw, 1.25rem);
+        overflow: hidden;
+      }
+
+      #projects .card {
+        height: 100%;
+      }
+
+      #experience .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: clamp(0.6rem, 1vw, 1.25rem);
+        overflow: visible;
+        padding-bottom: 0;
+      }
+
+      #experience .card {
+        min-height: 0;
+      }
+
+      .page-2 #recognition,
+      .page-2 #skills,
+      .page-2 #education {
+        grid-column: span 4;
+      }
+
+      .page-2 #skills,
+      .page-2 #education {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
     @media (max-width: 720px) {
       main {
         width: 100%;
@@ -303,6 +554,24 @@
       .contact-list {
         flex-direction: column;
         gap: 0.4rem;
+      }
+
+      .hero {
+        min-height: unset;
+        padding: 1.25rem;
+      }
+
+      .tabs {
+        position: static;
+        flex-direction: column;
+        border-top: none;
+        border-bottom: 2px solid var(--gold);
+      }
+
+      .tab-btn {
+        height: 3.5rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(196, 162, 104, 0.2);
       }
     }
 
@@ -342,6 +611,12 @@
   </style>
 </head>
 <body>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchPage(1)">Projects</button>
+    <button class="tab-btn" onclick="switchPage(2)">Professional</button>
+  </div>
+
+  <div class="page page-1 active">
   <main>
     <header class="hero full-span">
       <div>
@@ -359,35 +634,10 @@
       </ul>
     </header>
 
-    <section id="profile" class="section full-span">
-      <h2>Profile</h2>
-      <p class="section-intro">Librarian and creative technologist building interactive systems that link XR, AI, and real-time graphics to public learning, exhibitions, and research. Developing learning tools and museum installations with open formats and measurable benefits for participants.</p>
-    </section>
-
     <section id="projects" class="section full-span">
-      <h2>Recent XR & Interactive Systems</h2>
+      <h2>Recent Work</h2>
       <div class="card-grid">
-        <article class="card project-card">
-          <figure class="project-media">
-            <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/744/939/datas/original.jpg" alt="WEDGE wireless gesture enhancer prototype" loading="lazy">
-          </figure>
-          <div class="card-body">
-            <p class="eyebrow">MIT Reality Hack 2024 · Hardware & Augmented Productivity</p>
-            <h3>WEDGE — Wireless Ergonomic Dynamic Gesture Enhancer</h3>
-            <p class="meta">ESP32 peripheral that keeps bidirectional Bluetooth state with Meta Quest 2 via the Singularity Unity library.</p>
-            <ul class="impact-list">
-              <li>Built wireless firmware + Unity interface enabling synchronized haptics and telemetry without tethered PCs.</li>
-              <li>Co-designed modular triangular chassis so teams can swap buttons, LEDs, and sensors for accessibility in minutes.</li>
-              <li>Produced Unity toy scenes, music loops, and how-to media that foreground asymmetric play and education use cases.</li>
-            </ul>
-            <div class="link-badges">
-              <a href="https://devpost.com/software/wedge-wireless-ergonomic-dynamic-gesture-enhancer">Devpost</a>
-              <a href="https://www.youtube.com/watch?v=7wquz0SqFo4">Demo Video</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
+<article class="card project-card">
           <figure class="project-media">
             <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/04d2602c-d98b-4d3d-94b8-190e3903bd4c/PXL_20240421_160606857.jpg" alt="Visitors watching the Dueling Dinosaurs camera interactive" loading="lazy">
           </figure>
@@ -396,7 +646,7 @@
             <h3>Dueling Dinosaurs Camera Interactive</h3>
             <p class="meta">4K live video system + browser kiosk exposing fossil prep work, delivered with MTR Magic Key LLP.</p>
             <ul class="impact-list">
-              <li>Architected Sony SRG XB25 + Matrox Maevex + Dell R750 media stack to broadcast lab activity in real time.</li>
+              <li>Broadcast lab activity in real timeed Sony SRG XB25 + Matrox Maevex + Dell R750 media stack to.</li>
               <li>Shipped Windows kiosk UI backed by Drupal JsonAPI content and OpenCV/Python timelapse automation.</li>
               <li>Designed publishing workflow so museum staff keep lab highlights current without vendor intervention.</li>
             </ul>
@@ -420,6 +670,45 @@
             </ul>
             <div class="link-badges">
               <a href="https://www.mtrmagickey.com/ddfp">Project Page</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <figure class="project-media">
+            <img src="https://vrplants.cals.ncsu.edu/wp-content/uploads/2022/04/Dayflower_PistilInspection_ControlsExposed_VRPlants-1536x764.png" alt="VRPlants VR interface showing plant specimen inspection" loading="lazy">
+          </figure>
+          <div class="card-body">
+            <p class="eyebrow">NC State University Libraries × NCSU Plant & Microbial Biology</p>
+            <h3>VRPlants & The Naturalist's Workshop</h3>
+            <p class="meta">Open VR curriculum + WebXR archives featuring 3D scanned herbarium specimens.</p>
+            <ul class="impact-list">
+              <li>Co-led funding, staffing, and release of VRPlants with Unity + WebXR workflows for instructors.</li>
+              <li>Shipped The Naturalist's Workshop to SideQuest, reaching ~1,700 downloads and top 50 education ranking.</li>
+              <li>Presented outcomes at Harvard Library Discovery Series, catalyzing immersive pedagogy adoption.</li>
+            </ul>
+            <div class="link-badges">
+              <a href="https://vrplants.cals.ncsu.edu/">Program</a>
+              <a href="https://vrplants.cals.ncsu.edu/naturalists-workshop/">Naturalist's Workshop</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <figure class="project-media">
+            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/ce9a37e4-923d-4ccd-92d9-40e6b8ccfc73/PXL_20250927_215019890.PORTRAIT.ORIGINAL.jpg" alt="Students collaborating at NC State Collegiate Game Jam" loading="lazy">
+          </figure>
+          <div class="card-body">
+            <p class="eyebrow">NC State University Libraries</p>
+            <h3>Inaugural NC State Collegiate Game Jam</h3>
+            <p class="meta">Four-day "Tunnels" themed game jam uniting students across six colleges.</p>
+            <ul class="impact-list">
+              <li>Co-led jam that mobilized 55 students across six colleges (Sept 25–28, 2025).</li>
+              <li>Deployed custom lab images and coordinated space, hardware, and mentorship resources.</li>
+              <li>Awarded $2,250 in prizes to playable prototypes, establishing annual tradition.</li>
+            </ul>
+            <div class="link-badges">
+              <a href="https://www.lib.ncsu.edu/projects/inaugural-collegiate-game-jam">Project Page</a>
             </div>
           </div>
         </article>
@@ -451,12 +740,12 @@
           </figure>
           <div class="card-body">
             <p class="eyebrow">MTR Magic Key LLP</p>
-            <h3>Mocking Board — Lofi Internet Signage</h3>
-            <p class="meta">Pure HTML/CSS/JS signage kit that turns legacy browsers into always-editable animated signs.</p>
+            <h3>Mocking Board — Handy Internet Signage</h3>
+            <p class="meta">Pure HTML/CSS/JS signage kit to quickly make a sign or mock-up in the browser.</p>
             <ul class="impact-list">
-              <li>Live editor supports gradients, fonts, imagery, and per-element color states.</li>
-              <li>JSON import/export plus undo/redo enable scripting, LLM prompts, and rapid iteration for events.</li>
-              <li>Optimized for instant load on low-power hardware so schools can redeploy older machines.</li>
+              <li>Live editor supports gradients, fonts, imagery, animations, and per-element color states.</li>
+              <li>Rapidly mock-up, save, and transfer signage.</li>
+              <li>Optimized for instant load on low-power hardware.</li>
             </ul>
             <div class="link-badges">
               <a href="https://www.mtrmagickey.com/mocking-board">Project Page</a>
@@ -464,73 +753,99 @@
           </div>
         </article>
 
-        <article class="card project-card">
+                <article class="card project-card">
           <figure class="project-media">
-            <img src="https://vrplants.cals.ncsu.edu/wp-content/uploads/2022/04/Dayflower_PistilInspection_ControlsExposed_VRPlants-1536x764.png" alt="VRPlants VR interface showing plant specimen inspection" loading="lazy">
+            <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/744/939/datas/original.jpg" alt="WEDGE wireless gesture enhancer prototype" loading="lazy">
           </figure>
           <div class="card-body">
-            <p class="eyebrow">NC State University Libraries × NCSU Plant & Microbial Biology</p>
-            <h3>VRPlants & The Naturalist's Workshop</h3>
-            <p class="meta">Open VR curriculum + WebXR archives featuring 3D scanned herbarium specimens.</p>
+            <p class="eyebrow">MIT Reality Hack 2024 · Hardware & Augmented Productivity</p>
+            <h3>WEDGE — Wireless Ergonomic Dynamic Gesture Enhancer</h3>
+            <p class="meta">ESP32 peripheral that keeps bidirectional Bluetooth state with Meta Quest 2 via the Singularity Unity library.</p>
             <ul class="impact-list">
-              <li>Co-led funding, staffing, and release of VRPlants with Unity + WebXR workflows for instructors.</li>
-              <li>Shipped The Naturalist's Workshop to SideQuest, reaching ~1,700 downloads and top 50 education ranking.</li>
-              <li>Presented outcomes at Harvard Library Discovery Series, catalyzing immersive pedagogy adoption.</li>
+              <li>Built wireless firmware + Unity interface enabling synchronized haptics and telemetry without tethered PCs.</li>
+              <li>Co-designed modular triangular chassis so teams can swap buttons, LEDs, and sensors for accessibility in minutes.</li>
+              <li>Produced Unity toy scenes, music loops, and how-to media that foreground asymmetric play and education use cases.</li>
             </ul>
             <div class="link-badges">
-              <a href="https://vrplants.cals.ncsu.edu/">Program</a>
-              <a href="https://vrplants.cals.ncsu.edu/naturalists-workshop/">Naturalist's Workshop</a>
-              <a href="https://sidequestvr.com/app/1408/the-naturalists-workshop">SideQuest</a>
+              <a href="https://devpost.com/software/wedge-wireless-ergonomic-dynamic-gesture-enhancer">Devpost</a>
+              <a href="https://www.youtube.com/watch?v=7wquz0SqFo4">Demo Video</a>
             </div>
           </div>
         </article>
 
         <article class="card project-card">
           <figure class="project-media">
-            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/ce9a37e4-923d-4ccd-92d9-40e6b8ccfc73/PXL_20250927_215019890.PORTRAIT.ORIGINAL.jpg" alt="Students collaborating at NC State Collegiate Game Jam" loading="lazy">
+            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/4ce763ee-385b-45ef-8462-2e957aff4d8d/Screenshot+2025-12-05+at+03-01-53+Daily-Derby+%E2%80%A2+The+Daily+Horseracing+Game.png" alt="Daily Derby horse racing game interface" loading="lazy">
           </figure>
           <div class="card-body">
-            <p class="eyebrow">NC State University Libraries</p>
-            <h3>Inaugural NC State Collegiate Game Jam</h3>
-            <p class="meta">Four-day "Tunnels" themed game jam uniting students across six colleges.</p>
+            <p class="eyebrow">MTR Magic Key LLP</p>
+            <h3>Daily Derby — The Daily Horseracing Game</h3>
+            <p class="meta">Daily dose of thrill: select and race unique foals every day in this browser-based racing game.</p>
             <ul class="impact-list">
-              <li>Co-led jam that mobilized 55 students across six colleges (Sept 25–28, 2025).</li>
-              <li>Deployed custom lab images and coordinated space, hardware, and mentorship resources.</li>
-              <li>Awarded $2,250 in prizes to playable prototypes, establishing annual tradition.</li>
+              <li>Procedural horse generation system creating unique daily foals with distinct traits and abilities.</li>
+              <li>Designed web-first racing mechanics optimized for quick daily engagement and progression.</li>
+              <li>Launched as a live service game with persistent user accounts and daily challenges.</li>
             </ul>
             <div class="link-badges">
-              <a href="https://www.lib.ncsu.edu/projects/inaugural-collegiate-game-jam">Project Page</a>
+              <a href="https://www.daily-derby.com/">Play Daily Derby</a>
             </div>
           </div>
         </article>
       </div>
     </section>
+  </main>
+  </div>
+
+  <div class="page page-2">
+  <main>
+    <header class="hero full-span">
+      <div>
+        <p class="eyebrow">technobotanist.github.io</p>
+        <h1>Colin Patrick Keenan</h1>
+        <p>Technologist · Librarian · Exhibit Developer</p>
+      </div>
+      <ul class="contact-list">
+        <li>📍 Raleigh, NC</li>
+        <li><a href="mailto:cpkeena2@ncsu.edu">cpkeena2@ncsu.edu</a></li>
+        <li><a href="mailto:colin@mtrmagickey.com">colin@mtrmagickey.com</a></li>
+        <li><a href="https://github.com/technobotanist">GitHub: technobotanist</a></li>
+        <li><a href="https://technobotanist.github.io">technobotanist.github.io</a></li>
+        <li><a href="https://www.linkedin.com/in/colinkeenan/">LinkedIn</a></li>
+      </ul>
+    </header>
 
     <section id="experience" class="section full-span">
       <h2>Professional Experience</h2>
       <div class="card-grid">
         <article class="card experience-card">
           <figure>
-            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/2e0ab20d-65d4-4400-be81-b6503feb5577/DSC09148.jpg" alt="Portrait of Colin Patrick Keenan" loading="lazy">
+            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/d3949710-7f3a-4b18-b811-57615ef1edc3/MTRMK_logo_key%281%29.png" alt="MTR Magic Key logo" class="company-logo">
+            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/2e0ab20d-65d4-4400-be81-b6503feb5577/DSC09148.jpg" alt="Portrait of Colin Patrick Keenan" loading="lazy" class="company-photo">
           </figure>
           <div class="card-body">
             <p class="eyebrow">Oct 2021 – Present</p>
-            <h3>Chief Technologist & Partner — MTR Magic Key LLP</h3>
+            <div class="company-header">
+              <h3>Chief Technologist & Partner — MTR Magic Key LLP</h3>
+            </div>
             <p class="meta"><a href="https://www.mtrmagickey.com/partners/keenan">Partner Profile</a> • <a href="https://www.mtrmagickey.com">mtrmagickey.com</a></p>
             <ul class="impact-list">
-              <li>Co-founded interactive studio delivering museum exhibits, AI-powered kiosks, and web-native tools.</li>
-              <li>Architect long-lived installations (Dueling Dinosaurs, Zoetone, Mocking Board) with operator autonomy.</li>
+              <li>Co-founded interactive studio delivering custom exhibits, interactive kiosks, and web-native tools.</li>
+              <li>Building durable and dynamic installations with operator autonomy.</li>
+              <li>Developing containerized local intelligence company</li>
             </ul>
           </div>
         </article>
 
         <article class="card experience-card">
           <figure>
-            <img src="https://www.lib.ncsu.edu/sites/default/files/styles/large_square/public/2025-08/img_1349.jpg?itok=orCEG4Gs" alt="NC State University Libraries experiential learning space" loading="lazy">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lib.ncsu.edu%2Fthemes%2Fcustom%2Fncsulibraries%2Fimages%2Fscreenshot.jpg&f=1&nofb=1&ipt=bf4d000b7d61744672dc1f38c2cdd1b873144e0b3a6b8a1d932919832f333af4" alt="NC State Libraries logo" class="company-logo">
+            <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/bc99e6a1-0dd8-41ee-9dc9-1a63bc0fa35b/Maharaj_Game_Jam_Judging_and_Awards_2_9-28-2025-9.JPG" alt="Colin Keenan at NC State Game Jam awards ceremony" loading="lazy" class="company-photo">
           </figure>
           <div class="card-body">
             <p class="eyebrow">Aug 2023 – Present</p>
-            <h3>Experiential Learning Services Librarian — NC State University Libraries</h3>
+            <div class="company-header">
+              <h3>Experiential Learning Services Librarian — NC State University Libraries</h3>
+            </div>
             <p class="meta"><a href="https://www.lib.ncsu.edu/staff/cpkeena2">Staff Profile</a> • Learning Spaces & Services</p>
             <ul class="impact-list">
               <li>Lead creative development of XR, AI, and real-time media toolkits for faculty courses and research.</li>
@@ -540,9 +855,17 @@
         </article>
 
         <article class="card experience-card">
+                    <figure>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lib.ncsu.edu%2Fthemes%2Fcustom%2Fncsulibraries%2Fimages%2Fscreenshot.jpg&f=1&nofb=1&ipt=bf4d000b7d61744672dc1f38c2cdd1b873144e0b3a6b8a1d932919832f333af4" alt="NC State Libraries logo" class="company-logo">
+            <img src="https://www.lib.ncsu.edu/sites/default/files/styles/large_4_3/public/2024-06/vr_studio_11-29-2023-02-min.jpg?itok=4t6NN2Ar" alt="NC State University Libraries experiential learning space" loading="lazy" class="company-photo">
+          </figure>
           <div class="card-body">
             <p class="eyebrow">Aug 2020 – Aug 2023</p>
-            <h3>University Library Specialist — NC State University Libraries</h3>
+            <div class="company-header">
+              <h3>University Library Specialist — NC State University Libraries</h3>
+            </div>
+            <p class="eyebrow">Sep 2018 – Aug 2020</p>
+            <h3>University Library Technician — NC State University Libraries</h3>
             <p class="meta">Learning Spaces & Services</p>
             <ul class="impact-list">
               <li>Led XR, 3D scanning, and game engine consultations, delivering 300+ engagements.</li>
@@ -551,25 +874,13 @@
           </div>
         </article>
 
-        <article class="card experience-card">
-          <div class="card-body">
-            <p class="eyebrow">Sep 2018 – Aug 2020</p>
-            <h3>University Library Technician — NC State University Libraries</h3>
-            <p class="meta">Immersive Technologies</p>
-            <ul class="impact-list">
-              <li>Managed VR Studio + 3D Scanning Studio operations, driving a 26% rise in VR usage year over year.</li>
-              <li>Maintained continuity of XR services through early pandemic disruptions.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
+     </div>
     </section>
 
     <section id="recognition" class="section full-span">
       <h2>Recognition, Talks & Publications</h2>
       <ul class="recognition-list">
         <li>Winner- "Best use of nReal", MIT Reality Hack 2020 — Unity web social XR application "#<sup>3</sup>" (<a href="https://www.lib.ncsu.edu/news/staff-news/keenan-attends-and-wins-reality-hack">link</a>).</li>
-        <li>Inaugural NC State Collegiate Game Jam — Co-led a four-day jam (Sept 25–28, 2025) that mobilized 55 students across six colleges, deployed custom lab images, and awarded $2,250 in prizes to playable prototypes (<a href="https://www.lib.ncsu.edu/projects/inaugural-collegiate-game-jam">project page</a>).</li>
         <li>“AI and the Future of Personal Computing” — NC LIVE 2024 (<a href="https://www.youtube.com/watch?v=mt7eClWSvOg">video</a>).</li>
         <li>“Plant Biology Education in Virtual Reality” — Harvard Library Discovery Series 2021 (<a href="https://harvard.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=b8ebdb91-c3e8-4e88-8c4a-acd9014d7379">recording</a>).</li>
         <li>“Exhibiting Digital Collections via WebXR” — ALA Editions 2021 (<a href="https://www.alastore.ala.org/content/32-virtual-augmented-and-mixed-reality-programs-libraries">chapter</a>).</li>
@@ -597,5 +908,15 @@
     </section>
 
   </main>
+  </div>
+
+  <script>
+    function switchPage(pageNum) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector(`.page-${pageNum}`).classList.add('active');
+      document.querySelectorAll('.tab-btn')[pageNum - 1].classList.add('active');
+    }
+  </script>
 </body>
 </html>
