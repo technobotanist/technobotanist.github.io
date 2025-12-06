@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>William A. Smith - CV</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.3;
+      color: #222;
+      background: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.75rem;
+      font-size: 10pt;
+    }
+
+    header {
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 18pt;
+      margin-bottom: 0.25rem;
+      color: #111;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 9pt;
+      color: #444;
+    }
+
+    .contact-info a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 13pt;
+      color: #111;
+      border-bottom: 1px solid #999;
+      padding-bottom: 0.15rem;
+      margin: 0.75rem 0 0.4rem;
+    }
+
+    h3 {
+      font-size: 11pt;
+      color: #222;
+      margin: 0.5rem 0 0.15rem;
+    }
+
+    h4 {
+      font-size: 10pt;
+      color: #444;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .job-header, .project-header {
+      margin-bottom: 0.15rem;
+    }
+
+    .job-with-image {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0.5rem;
+      align-items: start;
+      margin-bottom: 0.4rem;
+    }
+
+    .job-image {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .headshot-image {
+      width: 120px;
+      height: 160px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .job-content {
+      min-width: 0;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 9pt;
+      margin-bottom: 0.15rem;
+    }
+
+    .project-description {
+      color: #555;
+      font-style: italic;
+      margin-bottom: 0.25rem;
+      font-size: 9pt;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    li {
+      margin-bottom: 0.1rem;
+      font-size: 9pt;
+    }
+
+    .project {
+      margin-bottom: 0.6rem;
+      page-break-inside: avoid;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+
+    .project-content h3 {
+      margin-top: 0;
+    }
+
+    .project-image {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    .links {
+      margin-top: 0.15rem;
+      font-size: 8pt;
+    }
+
+    .links a {
+      color: #0066cc;
+      text-decoration: none;
+      margin-right: 0.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-category {
+      margin-bottom: 0.15rem;
+      font-size: 9pt;
+    }
+
+    .skill-category strong {
+      display: inline;
+      color: #222;
+    }
+
+    .education-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .education-item strong {
+      display: inline;
+      font-size: 10pt;
+      color: #222;
+    }
+
+    .education-item div {
+      font-size: 9pt;
+    }
+
+    .summary {
+      background: #f9f9f9;
+      padding: 0.5rem;
+      border-left: 3px solid #0066cc;
+      margin-bottom: 0.75rem;
+      font-size: 9pt;
+    }
+
+    @media print {
+      body {
+        padding: 0.3rem;
+        font-size: 9pt;
+      }
+
+      h1 {
+        font-size: 16pt;
+      }
+
+      h2 {
+        font-size: 12pt;
+        margin-top: 0.5rem;
+      }
+
+      h3 {
+        font-size: 10pt;
+      }
+
+      .project {
+        page-break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+      }
+
+      .contact-info {
+        font-size: 8pt;
+      }
+
+      li {
+        font-size: 8pt;
+      }
+
+      .meta {
+        font-size: 8pt;
+      }
+
+      .summary {
+        background: #f5f5f5;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>William A. Smith</h1>
+    <div class="subtitle">Project Implementation Specialist · Hardware Integration · Physical Systems Design</div>
+    <div class="contact-info">
+      <span>📞 (336) 480-1008</span>
+      <span>📧 <a href="mailto:willaaronsmith@gmail.com">willaaronsmith@gmail.com</a></span>
+      <span>🔗 <a href="https://linkedin.com/in/william-a-smith/">LinkedIn</a></span>
+      <span>🔗 <a href="https://www.mtrmagickey.com/partners/smith">MTR Magic Key Partner</a></span>
+    </div>
+  </header>
+<br>
+  <section>
+    <h2>Professional Summary</h2>
+    <div class="summary">
+      Project implementation specialist with expertise in hardware integration, physical system design, and onsite deployment. Proven ability to transform concepts into durable, elegant installations that function reliably under real-world constraints. Strong organizational skills with attention to detail and experience managing complex technical projects from planning through execution.
+    </div>
+  </section>
+<br>
+  <section>
+    <h2>Professional Experience</h2>
+
+    <div class="job-with-image">
+      <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/ae5487fc-a23d-4fb2-8dad-c087d2e909d1/DSC08518+2min.jpg" alt="William A. Smith" class="headshot-image">
+      <div class="job-content">
+        <div class="job-header">
+          <h3>Head of Project Implementation — MTR Magic Key LLP</h3>
+          <div class="meta">Oct 2021 – Present</div>
+        </div>
+        <ul>
+          <li>Lead hardware integration, physical system design, and onsite deployment for museum exhibits and interactive installations</li>
+          <li>Transform rough concepts into durable, elegant installations that function reliably under real-world constraints</li>
+          <li>Manage project logistics, timelines, and coordination between design, fabrication, and installation phases</li>
+          <li>Oversee hardware procurement, system testing, and quality assurance for client deliverables</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.mtrmagickey.com/partners/smith">Partner Profile</a>
+          <a href="https://www.mtrmagickey.com">mtrmagickey.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-header">
+      <h3>Research Technician — NC State University Plant Metabolic Engineering Lab</h3>
+      <div class="meta">May 2014 – Present</div>
+    </div>
+    <ul>
+      <li>Collaborated with 22nd Century Group, Inc. to develop more than 100 novel tobacco lines using custom meganuclease technology</li>
+      <li>Established high-throughput genotyping protocols for detecting novel mutations in genes of interest</li>
+      <li>Planned and executed greenhouse and field experiments conducted multiple times each year</li>
+      <li>Oversaw training and day-to-day activities of hourly workers and new personnel</li>
+      <li>Designed novel vectors in the CRISPR-Cas9 system to be optimized for tobacco</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+
+    <div class="project">
+      <img src="https://images.squarespace-cdn.com/content/661b352cd7eb793adba99df1/2bc36381-6938-4672-94c4-9a908429eb2d/Screenshot+2024-06-12+at+22-00-53+MTR+Magic+Key+%28%40mtrmagickey%29+%E2%80%A2+Instagram+photos+and+videos.png" alt="Dueling Dinosaurs Camera Interactive" class="project-image">
+      <div class="project-content">
+        <h3>Dueling Dinosaurs Camera Interactive</h3>
+        <h4>NC Museum of Natural Sciences · MTR Magic Key</h4>
+        <p class="project-description">4K live video system + browser kiosk exposing fossil prep work</p>
+        <ul>
+          <li>Coordinated hardware integration of Sony SRG XB25 camera system, Matrox Maevex encoder, and Dell R750 media server</li>
+          <li>Managed onsite installation, system testing, and staff training for museum personnel</li>
+          <li>Ensured durable deployment meeting museum environmental and operational requirements</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.mtrmagickey.com/ddci">Project Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://www.midtownmag.com/wp-content/uploads/2024/06/8O2A5296-Enhanced-NR-Edit-1536x1024.jpg" alt="Dueling Dinosaurs Fossil Prep Interactive" class="project-image">
+      <div class="project-content">
+        <h3>Dueling Dinosaurs Fossil Prep Interactive</h3>
+        <h4>NC Museum of Natural Sciences · MTR Magic Key</h4>
+        <p class="project-description">Unity excavation game on large-format touchscreens</p>
+        <ul>
+          <li>Led physical system design and hardware integration for touchscreen kiosk installations</li>
+          <li>Coordinated installation logistics and ensured reliable operation under high-traffic museum conditions</li>
+          <li>Managed system testing and troubleshooting to deliver polished, production-ready exhibits</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.mtrmagickey.com/ddfp">Project Page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <strong>Hardware & Systems</strong>
+        Physical system design, Hardware integration, Kiosk deployment, Electronics assembly, System testing & QA
+      </div>
+      <div class="skill-category">
+        <strong>Project Management</strong>
+        Timeline coordination, Logistics management, Vendor coordination, Documentation, Staff training
+      </div>
+      <div class="skill-category">
+        <strong>Technical Tools</strong>
+        Microsoft Excel (advanced), Microsoft Word, Project management software, CAD tools
+      </div>
+      <div class="skill-category">
+        <strong>Laboratory Skills</strong>
+        Experimental design, Genome editing technologies, Data collection & analysis, Lab safety protocols
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="education-item">
+      <strong>Master of Science</strong>
+      <strong>Crop Science</strong>
+      <div>North Carolina State University, 2017 – 2022</div>
+      <div class="education-item">
+        <strong>Master's Research Project</strong>
+        <div>"Utilizing Genome Editing Technologies to Develop Ultra-low Nicotine Tobacco Lines"</div>
+        <div>PI: Dr. Ralph Dewey</div>
+      </div>
+    </div>
+    <div class="education-item">
+      <strong>Bachelor of Science</strong>
+      <strong>Biological Sciences</strong>
+      <div>North Carolina State University, 2008 – 2012</div>
+    </div>
+    <div class="education-item">
+      <strong>Bachelor of Science</strong>
+      <strong>History</strong>
+      <div>North Carolina State University, 2008 – 2012</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Qualifications for Conference Administration</h2>
+    <ul>
+      <li><strong>Microsoft Office Proficiency:</strong> Advanced experience with Excel for data management and Word for documentation</li>
+      <li><strong>Organizational Skills:</strong> Demonstrated ability managing complex project timelines, logistics, and multiple concurrent tasks</li>
+      <li><strong>Detail Oriented:</strong> Proven track record maintaining precise experimental records and coordinating technical specifications</li>
+      <li><strong>Interpersonal Skills:</strong> Experience collaborating with diverse stakeholders including museum staff, research teams, and clients</li>
+      <li><strong>Problem Solving:</strong> Skilled at troubleshooting technical issues and adapting to unexpected challenges in real-time</li>
+      <li><strong>Self-Sufficient:</strong> Provides own laptop and technical equipment for professional work</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Conference Abstracts</h2>
+    <ul>
+      <li>Dewey RE, Matsuba Y, Smith WA. "High efficiency precision editing of the tobacco genome." 2016 Coresta Congress, Berlin, Germany (Oct 2016)</li>
+      <li>Lewis RS, Drake-Stowe K, Heim C, Steede T, Smith WA, Dewey RE. "Experiments with Low alkaloid tobacco genotypes carrying induced BBL gene mutations." 2020 Tobacco Workers Conference, Louisville, KY (Jan 2020)</li>
+      <li>Dewey RE, Smith WA, Steede WT. "Characterizing the effects of targeted gene knockout of alkaloid biosynthetic genes on nicotine content and plant growth and development." 2022 Tobacco Workers Conference, Richmond, VA (Jan 2022)</li>
+      <li>Dewey RE, Smith WA, Steede WT. "Generating Ultra-Low Nicotine Tobaccos by Combining Knockout Mutations in Two Key Steps of the Alkaloid Biosynthetic Pathway." 2022 Coresta Congress (Online, Oct 2022)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    
+    <div class="education-item">
+      <div>Ralph E Dewey, Devarshi Selote, H Carol Griffin, Allison N Dickey, Derek Jantz, J Jeff Smith, Anna Matthiadis, Josh Strable, Caitlin Kestell, William Aaron Smith. (2023). Cytoplasmic Male Sterility and Abortive Seed Traits Generated through Mitochondrial Genome Editing Coupled with Allotopic Expression of atp1 in Tobacco. <em>FRONTIERS IN PLANT SCIENCE</em>, 14. doi.org/10.3389/fpls.2023.1253640</div>
+    </div>
+
+    <div class="education-item">
+      <div>Smith, W. A., Matsuba, Y., &amp; Dewey, R. E. (2022). Knockout of a key gene of the nicotine biosynthetic pathway severely affects tobacco growth under field, but not greenhouse conditions. <em>BMC RESEARCH NOTES</em>, 15(1). doi.org/10.1186/s13104-022-06188-9</div>
+    </div>
+
+    <div class="education-item">
+      <div>Lewis, R. S., Drake-Stowe, K. E., Heim, C., Steede, T., Smith, W., &amp; Dewey, R. E. (2020). Genetic and Agronomic Analysis of Tobacco Genotypes Exhibiting Reduced Nicotine Accumulation Due to Induced Mutations in Berberine Bridge Like (BBL) Genes. <em>FRONTIERS IN PLANT SCIENCE</em>, 11. doi.org/10.3389/fpls.2020.00368</div>
+    </div>
+  </section>
+</body>
+</html>
