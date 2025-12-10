@@ -237,10 +237,19 @@
     </div>
   </header>
 
-  <section>
-    <h2>Professional Experience</h2>
+  </section>
 
-    <div class="job-with-image">
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        });
+      });
+    </script>
+
+  </body>
+  </html>
       <img src="assets/experience/Experience1.png" alt="MTR Magic Key" class="job-image">
       <div class="job-content">
         <div class="job-header">

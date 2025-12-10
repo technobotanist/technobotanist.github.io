@@ -752,7 +752,8 @@
             </ul>
             <div class="link-badges">
               <a href="https://vrplants.cals.ncsu.edu/">VRPlants</a>
-              <a href="https://vrplants.cals.ncsu.edu/plant-anatomy-webxr-dissections/">WebXR Modules</a>
+              <a href="https://vrplants.cals.ncsu.edu/pb250/">PB250 WebXR Modules</a>
+              <a href="https://vr-plants-ncsu.github.io/PB250_LilyDissection/">Lily Dissection Interactive</a>
             </div>
           </div>
         </article>
@@ -1033,6 +1034,13 @@
       document.querySelector(`.page-${pageNum}`).classList.add('active');
       document.querySelectorAll('.tab-btn')[pageNum - 1].classList.add('active');
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="http"]').forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      });
+    });
   </script>
 </body>
 </html>
